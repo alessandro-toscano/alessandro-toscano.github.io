@@ -35,8 +35,10 @@ $(document).ready(function() {
     $(".backDrop").animate({ "opacity": ".70" }, 500);
     $(".box").animate({ "opacity": "1.0" }, 500);
     $(".backDrop, .box").css("display", "block");
-    var largeImage = $(this).find('img').attr("src");
-    $(".largeImage").attr({ src: largeImage });
+    // var largeImage = $(this).find('img').attr("src");
+    // $(".largeImage").attr({ src: largeImage });
+    var example = $(this).find('.item_example');
+    $(".box").append(example);
   });
 
   $(".close, .backDrop").on("click", function() {

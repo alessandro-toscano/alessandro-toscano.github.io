@@ -98,6 +98,7 @@ li.active {
     width: 1200px;
     margin: 0 auto;
     overflow: hidden;
+    transition: .25s all ease;
 }
 
 .grid-item {
@@ -106,7 +107,6 @@ li.active {
     margin: 15px 0;
     animation-name: sh_animate_up;
     animation-duration: .5s;
-    opacity: 1;
 }
 
 .grid-item img {
@@ -116,6 +116,10 @@ li.active {
 }
 
 .item_content {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
     position: relative;
     transition: .7s all ease-in-out;
     overflow: hidden;
@@ -290,7 +294,7 @@ li.active {
     height: 100%;
     left: 0px;
     opacity: .0;
-    position: absolute;
+    position: fixed;
     top: 0px;
     width: 100%;
     z-index: 50;
@@ -446,4 +450,17 @@ li.active {
 
 #return-to-top:hover i {
     color: #fff;
+}
+
+.item_example {
+    display: none;
+}
+
+.box .item_example {
+    display: block;
+}
+
+.box .item_example img {
+    display: block;
+    max-width: 100%;
 }
