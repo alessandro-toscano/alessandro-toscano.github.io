@@ -31,16 +31,6 @@ $(document).ready(function() {
 
 
   // CUSTOM GALLERY
-  $(".item_content").on("click", function() {
-    $(".backDrop").animate({ "opacity": ".70" }, 500);
-    $(".box").animate({ "opacity": "1.0" }, 500);
-    $(".backDrop, .box").css("display", "block");
-    // var largeImage = $(this).find('img').attr("src");
-    // $(".largeImage").attr({ src: largeImage });
-    var example = $(this).find('.item_example');
-    $(".box").append(example);
-  });
-
   $(".close, .backDrop").on("click", function() {
     closeBox();
   });
@@ -48,7 +38,21 @@ $(document).ready(function() {
   function closeBox() {
     $(".backDrop, .box").animate({ "opacity": "0" }, 500, function() {
       $(".backDrop, .box").css("display", "none");
+      $(".box .item_example").remove();
     });
   }
+
+  $(".item_content").on("click", function() {
+    $(".backDrop").animate({ "opacity": ".70" }, 500);
+    $(".box").animate({ "opacity": "1.0" }, 500);
+    $(".backDrop, .box").css("display", "block");
+    // var largeImage = $(this).find('img').attr("src");
+    // $(".largeImage").attr({ src: largeImage });
+    var example = $(this).find('.item_example');
+    console.log(example);
+    $(".box").append(example);
+  });
+
+
 
 });
