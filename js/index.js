@@ -38,7 +38,7 @@ $(document).ready(function() {
   function closeBox() {
     $(".backDrop, .box").animate({ "opacity": "0" }, 500, function() {
       $(".backDrop, .box").css("display", "none");
-      $(".box .item_example").remove();
+      $(".box .item_example").detach();
     });
   }
 
@@ -49,10 +49,8 @@ $(document).ready(function() {
     // var largeImage = $(this).find('img').attr("src");
     // $(".largeImage").attr({ src: largeImage });
     var example = $(this).find('.item_example');
-    console.log(example);
-    $(".box").append(example);
+    var clone_example = example.clone(true);
+    clone_example.prependTo(".box");
   });
-
-
 
 });

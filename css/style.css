@@ -284,6 +284,7 @@ li.active {
 .isotope_content {
     position: relative;
     margin-top: -200px;
+    padding-bottom: 50px;
 }
 
 /*GALLERY*/
