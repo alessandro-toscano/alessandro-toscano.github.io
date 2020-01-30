@@ -31,7 +31,8 @@ $(document).ready(function() {
 
 
   // CUSTOM GALLERY
-  $(".close, .backDrop").on("click", function() {
+  $(".close, .backDrop").on("click", function(e) {
+    e.preventDefault();
     closeBox();
   });
 
