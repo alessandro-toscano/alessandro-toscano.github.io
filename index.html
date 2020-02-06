@@ -16,8 +16,7 @@
 </head>
 
 <body>
-    <header>
-    </header>
+    <div id="loader" class="center"></div>
     <div class="home_page">
         <div class="main_img">
             <img src="img/bg.jpg">
@@ -1225,8 +1224,7 @@
                             <img src="img/photo/484348687odNfU.jpg">
                         </div>
                     </div>
-                </div>
-                <!-- End of item -->
+                </div> <!-- End of item -->
                 <!-- Item -->
                 <div class="grid-item photo">
                     <div class="item_content">
@@ -1316,6 +1314,21 @@
         </div>
         <a href="#" id="return-to-top" title="Return to top"><i class="fas fa-chevron-up"></i></a>
     </footer>
+    <script>
+    document.onreadystatechange = function() {
+        if (document.readyState !== "complete") {
+            document.querySelector(
+                "body").style.visibility = "hidden";
+            document.querySelector(
+                "#loader").style.visibility = "visible";
+        } else {
+            document.querySelector(
+                "#loader").style.display = "none";
+            document.querySelector(
+                "body").style.visibility = "visible";
+        }
+    };
+    </script>
 </body>
 
 </html>
