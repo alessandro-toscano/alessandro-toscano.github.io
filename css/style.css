@@ -468,6 +468,7 @@ li.active {
 .box .item_example img {
     display: block;
     max-width: 100%;
+    width: 100%;
 }
 
 .hidden {
