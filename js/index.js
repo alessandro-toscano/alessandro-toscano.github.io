@@ -15,12 +15,6 @@ $(document).ready(function() {
     }, 1000);
   });
 
-
-  // ISOTOPE INIT
-  $('.grid').isotope({
-    itemSelector: '.grid-item',
-  });
-
   // filter items on button click
   $('.filter-button-group').on('click', 'li', function() {
     var filterValue = $(this).attr('data-filter');
@@ -52,6 +46,55 @@ $(document).ready(function() {
     var example = $(this).find('.item_example');
     var clone_example = example.clone(true);
     clone_example.prependTo(".box");
+  });
+
+
+  // ISOTOPE INIT
+  var $container = $('.grid').isotope({
+    itemSelector: '.grid-item',
+  });
+
+  // Isotope load more
+  var initShow = 9; //number of images loaded on init & onclick load more button
+  var counter = initShow; //counter for load more button
+  var iso = $container.data('isotope'); // get Isotope instance
+
+  loadMore(initShow); //execute function onload
+
+  function loadMore(toShow) {
+    $container.find(".hidden").removeClass("hidden");
+
+    var hiddenElems = iso.filteredItems.slice(toShow, iso.filteredItems.length).map(function(item) {
+      return item.element;
+    });
+    $(hiddenElems).addClass('hidden');
+    $container.isotope('layout');
+
+    //when no more to load, hide show more button
+    if (hiddenElems.length == 0) {
+      $("#load-more").hide();
+    } else {
+      $("#load-more").show();
+    };
+
+  }
+
+
+  //when load more button clicked
+  $("#load-more").click(function() {
+
+    if ($('.filters ul li').data('clicked')) {
+      //when filter button clicked, set initial value for counter
+      counter = initShow;
+
+      $('.filters ul li').data('clicked', false);
+    } else {
+      counter = counter;
+    };
+
+    counter = counter + initShow;
+
+    loadMore(counter);
   });
 
 });
