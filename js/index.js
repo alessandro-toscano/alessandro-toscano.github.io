@@ -59,6 +59,7 @@ $(document).ready(function() {
   var counter = initShow; //counter for load more button
   var iso = $container.data('isotope'); // get Isotope instance
 
+
   loadMore(initShow); //execute function onload
 
   function loadMore(toShow) {
@@ -79,6 +80,12 @@ $(document).ready(function() {
 
   }
 
+  function filterClick() {
+
+    $container.find(".hidden").removeClass("hidden");
+    $("#load-more").hide();
+
+  }
 
   //when load more button clicked
   $("#load-more").click(function() {
@@ -95,6 +102,24 @@ $(document).ready(function() {
     counter = counter + initShow;
 
     loadMore(counter);
+  });
+
+  $('.filters ul li').click(function() {
+    var all = $(this).data('filter');
+    if (all != '*') {
+      filterClick();
+    } else {
+      console.log(iso.items);
+      var hiddenElems = iso.items.slice(9, iso.items.length).map(function(item) {
+        return item.element;
+      });
+      console.log(hiddenElems);
+      $(hiddenElems).addClass('hidden');
+      $container.isotope('layout');
+      $("#load-more").show();
+
+    }
+
   });
 
 });
