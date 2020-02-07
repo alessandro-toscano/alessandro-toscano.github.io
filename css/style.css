@@ -498,6 +498,29 @@ li.active {
     letter-spacing: .2em;
 }
 
+#preloader {
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    top: 0;
+    left: 0;
+}
+
+#preloader div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    text-align: center;
+}
+
+#preloader div img {
+    display: inline-block;
+}
+
 /*RESPONSIVE*/
 @media all and (max-width: 1440px) {
     .isotope_content {
@@ -645,6 +668,5 @@ li.active {
 
     #return-to-top {
         bottom: 25px;
-        right: 15px;
-    }
+        right: 15px;  }
 }
