@@ -519,6 +519,8 @@ li.active {
 
 #preloader div img {
     display: inline-block;
+    max-width: 80%;
+    margin: 0 auto;
 }
 
 /*RESPONSIVE*/
