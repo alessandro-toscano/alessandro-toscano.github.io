@@ -564,6 +564,18 @@ li.active {
     margin: 0 auto;
 }
 
+.hidden_text {
+    display: none;
+    font-weight: 200;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 23px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 /*RESPONSIVE*/
 @media all and (max-width: 1440px) {
     .isotope_content {
@@ -664,6 +676,10 @@ li.active {
         padding: 15px 35px;
         font-size: 14px;
     }
+
+    .fancy-item-overlay-content a h3 {
+        font-size: 20px;
+    }
 }
 
 @media all and (max-width: 600px) {
@@ -701,7 +717,13 @@ li.active {
     }
 
     .main_img .text h1 {
-        font-size: 23px;
+        display: none;
+    }
+
+    .hidden_text {
+        display: block;
+        width: 100%;
+        text-align: center;
     }
 
     .grid-item {
@@ -721,5 +743,9 @@ li.active {
     #return-to-top {
         bottom: 25px;
         right: 15px;
+    }
+
+    .fancy-item-overlay-content a h3 {
+        font-size: 18px;
     }
 }
