@@ -49,12 +49,8 @@ $(document).ready(function() {
   });
 
 
-  // ISOTOPE INIT
-  var $container = $('.grid').isotope({
-    itemSelector: '.grid-item',
-  });
-
   // Isotope load more
+  var $container = $('.grid').isotope();
   var initShow = 9; //number of images loaded on init & onclick load more button
   var counter = initShow; //counter for load more button
   var iso = $container.data('isotope'); // get Isotope instance

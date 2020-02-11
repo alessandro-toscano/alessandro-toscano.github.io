@@ -16,11 +16,11 @@
 </head>
 
 <body>
-    <div id="preloader">
+    <!--   <div id="preloader">
         <div>
             <img src="img/skull.gif" alt="Loader gif">
         </div>
-    </div>
+    </div> -->
     <div class="home_page">
         <div class="main_img">
             <img src="img/bg.jpg" alt="Background image">
@@ -1298,14 +1298,20 @@
         <a href="#" id="return-to-top" title="Return to top"><i class="fas fa-chevron-up"></i></a>
     </footer>
     <script type="text/javascript">
-    $(window).on('load', function() { // makes sure the whole site is loaded 
-        $('#preloader').delay().fadeOut('slow'); // will fade out the white DIV that covers the website. 
-        if (!window.location.hash) {
-            window.location = window.location + '#loaded';
-            window.location.reload();
-        }
+    // $(window).on('load', function() { // makes sure the whole site is loaded 
+    //     $('#preloader').delay().fadeOut('slow'); // will fade out the white DIV that covers the website. 
+    //     if (!window.location.hash) {
+    //         window.location = window.location + '#loaded';
+    //         window.location.reload();
+    //     }
+    // });
+
+    $(window).load(function() {
+        // ISOTOPE INIT
+        var $container = $('.grid').isotope({
+            itemSelector: '.grid-item',
+        });
     });
     </script>
 </body>
-
 </html>
