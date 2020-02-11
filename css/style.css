@@ -320,6 +320,7 @@ li.active {
     border-radius: 2px;
     max-width: 850px;
     width: 90%;
+    background-color: #fff;
 }
 
 .close {
@@ -456,7 +457,7 @@ li.active {
 
 .item_example {
     display: none;
-    background-color: rgba(23, 23, 23, 0.8);
+    background-color: #fff;
 }
 
 .box .item_example {
@@ -466,7 +467,11 @@ li.active {
 .box .item_example img {
     display: block;
     max-width: 100%;
-    margin: 0 auto;
+    margin: 0 auto 15px;
+}
+
+.box .item_example img:last-child {
+    margin-bottom: 0px;
 }
 
 .hidden {
@@ -751,6 +756,5 @@ li.active {
     }
 
     .fancy-item-overlay-content a h3 {
-        font-size: 18px;
-    }
+        font-size: 18px;  }
 }
