@@ -12,6 +12,10 @@ html {
     font-family: "Raleway-Regular";
 }
 
+.test {
+    width: 100%;
+}
+
 .clearfix:after {
     content: ".";
     display: block;
@@ -756,5 +760,5 @@ li.active {
     }
 
     .fancy-item-overlay-content a h3 {
-        font-size: 18px;  }
+        font-size: 18px; }
 }
